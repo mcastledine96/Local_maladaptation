@@ -45,7 +45,7 @@ anova(bm2, bm4) #effect of species significant
 bm5 <- lmer(sp.fit ~ 1 + (1|Res.id), data = biotic_dat)
 anova(bm5, bm3) #Species remains as the only significant independent effect
 
-#   Figure 1a
+#   Figure 2a
 
 #make treatment labels more intuitive
 biotic_dat$Treat <- as.character(biotic_dat$Treat)
@@ -88,7 +88,7 @@ am2 <- lm(fit ~ Coev + Sp, data = abiotic_dat)
 anova(am1, am2, test = "F") #significant interaction
 emmeans::emmeans(mod, pairwise ~ Coev | Sp) #pairwise comparisons of populations within species shows effect is driven by monoculture-evolved populations
 
-#   Figure 1b
+#   Figure 2b
 
 abiotic_dat$Coev <- as.character(abiotic_dat$Coev)
 abiotic_dat$Coev[abiotic_dat$Coev == "Anc"] <- "Ancestral"
